@@ -18,7 +18,7 @@
   ],
   "topbarCtaButton": {
     "name": "Add to Server",
-    "url": "https://discord.com/api/oauth2/authorize?client_id=YOUR_BOT_ID&permissions=8&scope=bot"
+    "url": "https://discord.com/api/oauth2/authorize?client_id=1431599058463490068&permissions=8&scope=bot"
   },
   "navigation": [
     {

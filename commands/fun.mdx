@@ -1,0 +1,173 @@
+---
+title: "Fun"
+description: "---
+title: Fun Commands
+description: 'Entertainment and interactive commands to engage your community'
+---
+## Overview
+Fun commands add entertainment value to your Discord server with games, interactive features, and playful utilities. These commands help keep your community engaged and create a lively atmosphere.
+## Games & Interactive
+### minesweeper
+Generate a playable minesweeper game in Discord.
+```bash
+.minesweeper [size] [bombs]
+.ms 8 10
+Parameters:
+
+size - Grid size (2-10, default: 5)
+bombs - Number of bombs (1 to size²-1, default: 5)
+Example:
+
+.minesweeper 7 12
+Generates a 7×7 grid with 12 hidden bombs. Click the spoilers to reveal!
+
+rps
+Play rock, paper, scissors with the bot.
+
+.rps rock
+.rockpaperscissors paper
+Choices:
+
+rock 🪨
+paper 📄
+scissors ✂️
+Win conditions:
+
+Rock beats Scissors
+Paper beats Rock
+Scissors beats Paper
+8ball
+Ask the magic 8-ball a yes/no question.
+
+.8ball Will I win the lottery?
+.eightball Is today Friday?
+Responses include:
+
+Affirmative (10 responses)
+Non-committal (5 responses)
+Negative (5 responses)
+dice
+Roll a dice with custom number of sides.
+
+.dice
+.dice 20
+.roll 100
+Parameters:
+
+sides - Number of sides (2-100, default: 6)
+Examples:
+
+.dice        # Standard 6-sided dice
+.dice 20     # D&D d20
+.dice 100    # Percentile dice
+poll
+Create a timed Yes/No poll with reactions.
+
+.poll (duration) (question)
+.poll 1h Should we add a new channel?
+.poll 30m Is pineapple on pizza acceptable?
+Duration formats:
+
+s - seconds (minimum: 10s)
+m - minutes
+h - hours
+d - days (maximum: 7d)
+Reactions:
+
+👍 Yes
+👎 No
+😐 Neutral
+Features:
+
+Automatic result calculation
+Vote counting
+Tie detection
+Winner announcement
+Permissions: MANAGE_MESSAGES
+
+Utilities
+calculator
+Calculate mathematical expressions.
+
+.calculator 2 + 2
+.calc 5 * (3 + 7)
+.math 2^8
+Supported operators:
+
++ Addition
+- Subtraction
+* Multiplication
+/ Division
+^ Exponentiation
+() Parentheses for grouping
+Examples:
+
+.calc 15 + 25
+.calc (10 + 5) * 2
+.calc 2^10
+.calc 100 / 4 - 5
+avatar
+Display a user's avatar/profile picture.
+
+.avatar
+.avatar @user
+.av @user
+.pfp 123456789
+Features:
+
+View full-resolution avatar
+Download links (PNG, JPEG, WebP)
+Works with user mention or ID
+Defaults to your own avatar if no user specified
+Download formats:
+
+PNG (transparent background support)
+JPEG (smaller file size)
+WebP (best quality)
+reverse
+Reverse any text.
+
+.reverse Hello World!
+.reverse 12345
+Example:
+
+.reverse Discord Bot
+Output: toB drocsid
+
+Use cases:
+
+Create backwards messages
+Fun text effects
+Spoiler-free hints
+Tips & Best Practices
+<AccordionGroup> <Accordion title="Poll timing"> Choose appropriate poll durations: ```bash .poll 5m Quick question # Short polls for simple questions .poll 1h Important topic # Medium polls for decisions .poll 1d Community vote # Long polls for major changes ``` </Accordion> <Accordion title="Minesweeper difficulty"> Adjust difficulty by changing bomb density: ```bash .ms 5 5 # Easy (20% bombs) .ms 8 15 # Medium (23% bombs) .ms 10 30 # Hard (30% bombs) ``` </Accordion> <Accordion title="Calculator usage"> Complex calculations: ```bash .calc ((15 + 5) * 2) / 4 .calc 2^8 + 100 ``` </Accordion> <Accordion title="8ball etiquette"> Best for yes/no questions: ```bash .8ball Should we host an event tonight? # Good .8ball What time is the event? # Bad (not yes/no) ``` </Accordion> </AccordionGroup>
+Command Reference
+Command	Aliases	Cooldown	Permissions
+minesweeper	ms	10s	None
+rps	rockpaperscissors	3s	None
+8ball	eightball	3s	None
+calculator	calc, math	3s	None
+dice	roll	2s	None
+poll	-	5s	MANAGE_MESSAGES
+avatar	av, pfp	3s	None
+reverse	-	3s	None
+Fun Facts
+<Info> **Did you know?** The minesweeper game uses Discord's spoiler tags (`||`) to hide bombs and numbers, making it fully playable without any external links! </Info> <Warning> **Poll limitations:** Polls automatically end after the specified duration. Make sure to choose a duration that gives everyone enough time to vote! </Warning> <Tip> **Avatar downloads:** The avatar command provides multiple format options. Use PNG for transparency, JPEG for smaller file sizes, or WebP for the best quality. </Tip>
+Examples in Action
+Hosting a game night poll
+.poll 2h Should we host a game night this Friday?
+Playing minesweeper challenge
+.ms 10 25
+Good luck finding all 25 bombs in a 10×10 grid!
+
+Quick calculation
+.calc (100 + 50) * 2 / 3
+Result: 100
+
+Getting someone's avatar
+.avatar @FriendName
+Downloads available in PNG, JPEG, and WebP formats.
+
+Need Help?
+Join our support server for assistance with fun commands or to suggest new games!"
+---

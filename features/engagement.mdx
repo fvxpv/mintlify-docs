@@ -1,0 +1,262 @@
+---
+title: "Engagement"
+description: "---
+title: Engagement
+description: 'Boost server activity with interactive features'
+---
+## Overview
+Engagement features help keep your community active and entertained. Run giveaways, create polls, highlight popular messages with starboard, and provide member support through tickets.
+---
+## Giveaways
+Host timed giveaways with automatic winner selection. Perfect for community events, milestones, and promotions.
+### Starting a Giveaway
+Create a new giveaway in any channel:
+```bash
+.giveaway start (channel) (duration) (winners) (prize)
+.gw start #giveaways 1h 3 Discord Nitro
+.gw start #events 2d 1 VIP Role
+Duration formats:
+
+s - Seconds (e.g., 30s)
+m - Minutes (e.g., 15m)
+h - Hours (e.g., 2h)
+d - Days (e.g., 7d)
+w - Weeks (e.g., 1w)
+How it works:
+
+Bot posts an embed with giveaway details
+Members react with 🎉 to enter
+Winners are randomly selected when time expires
+Bot announces the winners automatically
+Managing Giveaways
+End a giveaway early
+.giveaway end (message_link)
+.gw end https://discord.com/channels/123/456/789
+Reroll winners
+If winners don't respond or you want new winners:
+
+.giveaway reroll (message_link)
+.gw reroll https://discord.com/channels/123/456/789
+Cancel a giveaway
+Remove a giveaway before it ends:
+
+.giveaway cancel (message_link)
+.gw cancel https://discord.com/channels/123/456/789
+List all giveaways
+View active giveaways in your server:
+
+.giveaway list
+.gw list
+Shows all giveaways with links and status.
+
+Polls
+Create simple yes/no polls with automatic vote counting and results.
+
+Creating a Poll
+.poll (duration) (question)
+.poll 1h Should we add a new channel?
+.poll 30m Is this feature useful?
+.poll 2d Which game should we play?
+How it works:
+
+Bot posts the question with your name
+Members vote with 👍 (Yes), 👎 (No), or 😐 (Neutral)
+After the duration, bot tallies votes and announces results
+Duration limits:
+
+Minimum: 10 seconds
+Maximum: 7 days
+Results show:
+
+Vote counts for each option
+Winner (Yes, No, or Tie)
+Total participation
+Starboard
+Automatically highlight popular messages that receive enough reactions. Members can "star" great content to immortalize it.
+
+Setup
+Set the channel where starred messages appear:
+
+.starboard set #starboard
+.starboard set #hall-of-fame
+Configuration
+Set reaction threshold
+Number of reactions needed to star a message:
+
+.starboard threshold 3
+.starboard threshold 5
+Default: 3 reactions
+
+Change the star emoji
+.starboard emoji ⭐
+.starboard emoji ✨
+.starboard emoji 🌟
+Default: ⭐
+
+Toggle self-starring
+Allow/prevent users from starring their own messages:
+
+.starboard selfstar true    # Allow self-stars
+.starboard selfstar false   # Prevent self-stars
+Customize embed color
+.starboard color gold
+.starboard color blue
+.starboard color #ff6565
+Valid colors: red, blue, green, gold, purple, orange, yellow, teal, or hex codes
+
+Toggle timestamp
+Show/hide when the message was posted:
+
+.starboard timestamp true
+.starboard timestamp false
+Ignoring Content
+Prevent certain channels, roles, or members from appearing on starboard:
+
+.starboard ignore #staff-chat       # Ignore channel
+.starboard ignore @Admin            # Ignore role
+.starboard ignore @User             # Ignore member
+How it works:
+
+Starred messages from ignored sources won't appear
+Helps keep starboard focused on public content
+Multiple ignores can be active
+Ticket System
+Professional support ticket system with transcripts, role permissions, and logging.
+
+Initial Setup
+Send a ticket creation panel to a channel:
+
+.ticket setup #tickets
+.ticket setup #support
+This posts an embed with a "Create" button. Members click it to open tickets.
+
+Configuration
+Set support roles
+Choose who can view and respond to tickets:
+
+.ticket support @Support @Moderator @Admin
+All listed roles get access to tickets automatically.
+
+Set ticket category
+Organize tickets under a category:
+
+.ticket category Support
+.ticket category 123456789
+All new tickets will be created in this category.
+
+Enable DM notifications
+Notify ticket creators via DM:
+
+.ticket dms true     # Enable DMs
+.ticket dms false    # Disable DMs
+Members receive DMs when their ticket closes or is deleted.
+
+Set up logging
+Log ticket events to a channel:
+
+.ticket logs #ticket-logs
+Track: creates, closes, deletes, transcripts, member leaves, inactivity
+
+Configure inactivity detection
+Auto-warn for inactive tickets:
+
+.ticket inactivity true              # Enable detection
+.ticket timeout 24                   # Set hours (default: 24)
+Bot warns in tickets that haven't had messages in the specified time.
+
+Managing Tickets
+Add someone to a ticket
+.ticket add @User
+Remove someone from a ticket
+.ticket remove @User
+Rename a ticket
+.ticket rename billing-issue
+.ticket rename bug-report-123
+Ticket Controls
+Within any ticket, members and staff can use buttons:
+
+🔒 Close - Closes the ticket, removes creator access
+📄 Transcript - Generates HTML transcript of all messages
+🗑️ Delete - Deletes the ticket channel (with transcript to logs/DM)
+
+Reset System
+Remove all ticket configuration and data:
+
+.ticket reset
+Requires confirmation. Use carefully!
+
+Command Reference
+Giveaway Commands
+Command	Aliases	Description	Permissions
+giveaway	gw	Main command group	-
+giveaway start	-	Start a giveaway	MANAGE_GUILD
+giveaway end	-	End early	MANAGE_GUILD
+giveaway reroll	-	Pick new winners	MANAGE_GUILD
+giveaway cancel	-	Cancel giveaway	MANAGE_GUILD
+giveaway list	-	List active giveaways	-
+Poll Commands
+Command	Description	Permissions
+poll	Create a timed poll	MANAGE_MESSAGES
+Starboard Commands
+Command	Description	Permissions
+starboard set	Set starboard channel	MANAGE_GUILD
+starboard threshold	Set reaction count	MANAGE_GUILD
+starboard emoji	Set star emoji	MANAGE_GUILD
+starboard selfstar	Toggle self-starring	MANAGE_GUILD
+starboard color	Set embed color	MANAGE_GUILD
+starboard timestamp	Toggle timestamp	MANAGE_GUILD
+starboard ignore	Ignore channel/role/member	MANAGE_GUILD
+Ticket Commands
+Command	Description	Permissions
+ticket setup	Send ticket panel	MANAGE_GUILD
+ticket support	Set support roles	MANAGE_GUILD
+ticket category	Set ticket category	MANAGE_GUILD
+ticket add	Add user to ticket	-
+ticket remove	Remove user	-
+ticket rename	Rename ticket	-
+ticket inactivity	Toggle detection	MANAGE_GUILD
+ticket timeout	Set timeout hours	MANAGE_GUILD
+ticket dms	Toggle DM notifications	MANAGE_GUILD
+ticket logs	Set logs channel	MANAGE_GUILD
+ticket reset	Reset system	MANAGE_GUILD
+Best Practices
+<AccordionGroup> <Accordion title="Giveaway duration"> Choose appropriate durations: - Quick events: 1-6 hours - Standard giveaways: 1-3 days - Major events: 5-7 days
+Avoid extremely short durations (< 1 hour) for fair participation.
+</Accordion> <Accordion title="Starboard threshold"> Set threshold based on server size: - Small servers (< 100): 2-3 stars - Medium servers (100-1000): 3-5 stars - Large servers (1000+): 5-10 stars </Accordion> <Accordion title="Ticket organization"> Use categories to keep tickets organized: ```bash .ticket category Support Tickets ``` Separate from regular channels for clarity. </Accordion> <Accordion title="Support role setup"> Assign multiple tiers: ```bash .ticket support @Helper @Moderator @Admin ``` More coverage = faster response times. </Accordion> </AccordionGroup>
+Examples
+Running a Server Event
+# Create announcement
+# Post in #announcements: "React below to enter our giveaway!"
+# Start the giveaway
+.gw start #giveaways 3d 5 VIP Role + Discord Nitro
+# Create a poll for feedback
+.poll 2d Did you enjoy this event?
+# Members participate
+# Winners announced automatically in 3 days
+Setting Up Support System
+# Create ticket panel
+.ticket setup #create-ticket
+# Configure support team
+.ticket support @Support @Moderator
+# Set category
+.ticket category Support
+# Enable features
+.ticket dms true
+.ticket inactivity true
+.ticket timeout 48
+.ticket logs #ticket-logs
+Starboard Configuration
+# Set up starboard
+.starboard set #starboard
+.starboard threshold 5
+.starboard emoji ⭐
+.starboard color gold
+.starboard selfstar false
+# Ignore staff channels
+.starboard ignore #mod-chat
+.starboard ignore #admin-only
+Tips & Tricks
+<Info> **Giveaway requirements:** Consider using role requirements or entry methods outside the bot (like "join our event") for more controlled giveaways. </Info> <Warning> **Ticket transcripts:** Always enable logs channel to preserve transcripts when tickets are deleted. DMs may fail if members have them disabled. </Warning> <Tip> **Poll engagement:** Keep questions simple and clear. Yes/no format works best for decisive results. </Tip> <Tip> **Starboard quality:** Set threshold high enough to prevent spam but low enough to catch good content. Adjust based on server activity. </Tip>
+Need Help?
+Join our support server for assistance with engagement features or to request new functionality!"
+---

@@ -1,0 +1,147 @@
+---
+title: "Automations"
+description: "---
+title: Automations
+description: 'Automatic actions to enhance your server management'
+---
+## Overview
+Automations help your server run smoothly by handling repetitive tasks automatically. Set up auto-responses to common triggers and auto-assign roles to new members.
+## Autoresponder
+Automatically respond to specific trigger words in messages. Perfect for FAQs, greetings, and common inquiries.
+### Setup
+First, enable the autoresponder system:
+```bash
+.autoresponder enable
+.ar enable
+Adding Auto-Responses
+Create automatic replies to specific triggers:
+
+.autoresponder add (trigger) (response)
+.ar add hello Hi there! Welcome to our server!
+.ar add gm Good morning! ☀️
+.ar add support Please visit our support channel for help!
+How it works:
+
+Triggers are exact word matches (case-insensitive)
+The trigger must be a complete word in the message
+Only one response per message (first match wins)
+Examples:
+
+.ar add hi Hello there!
+.ar add faq Check out our FAQ channel!
+.ar add rules Please read #rules before chatting!
+Managing Responses
+Edit an existing response
+.autoresponder edit (trigger) (new response)
+.ar edit hi Hey! How can I help you?
+Remove a response
+.autoresponder remove (trigger)
+.ar remove hi
+View all responses
+.autoresponder list
+.ar list
+Shows up to 10 autoresponses with their triggers and response previews.
+
+Get info about a specific response
+.autoresponder info (trigger)
+.ar info hi
+Displays:
+
+Full response text
+Creator information
+Creation timestamp
+Reset All Responses
+Remove all autoresponses (requires confirmation):
+
+.autoresponder reset
+.ar clear
+Disable Autoresponder
+Turn off the system while keeping your configured responses:
+
+.autoresponder disable
+.ar disable
+Autorole
+Automatically assign roles to members when they join your server. Set different roles for humans and bots.
+
+Adding Autoroles
+For human members:
+.autorole add @Member
+.autorole add Member Role
+For bot members:
+.autorole bots @Bot
+.autorole bots Bot Role
+Multiple roles: You can add multiple roles - all will be assigned when a member joins.
+
+Examples:
+
+.autorole add @Member
+.autorole add @Verified
+.autorole bots @Bot Role
+Removing Autoroles
+Remove a role from both human and bot autorole lists:
+
+.autorole remove @Member
+.autorole delete Member Role
+Viewing Configuration
+See all configured autoroles:
+
+.autorole list
+.autorole view
+Displays:
+
+Human Roles - Assigned to new human members
+Bot Roles - Assigned to new bot members
+Command Reference
+Autoresponder Commands
+Command	Aliases	Description	Permissions
+autoresponder	ar	Main command group	MANAGE_GUILD
+autoresponder enable	-	Enable the system	MANAGE_GUILD
+autoresponder disable	-	Disable the system	MANAGE_GUILD
+autoresponder add	-	Add new response	MANAGE_GUILD
+autoresponder remove	delete, del	Remove response	MANAGE_GUILD
+autoresponder edit	-	Edit response	MANAGE_GUILD
+autoresponder list	view	List all responses	MANAGE_GUILD
+autoresponder info	-	View response details	MANAGE_GUILD
+autoresponder reset	clear	Remove all responses	MANAGE_GUILD
+Autorole Commands
+Command	Aliases	Description	Permissions
+autorole	-	Main command group	MANAGE_ROLES
+autorole add	-	Add role for humans	MANAGE_ROLES
+autorole bots	-	Add role for bots	MANAGE_ROLES
+autorole remove	delete, del	Remove autorole	MANAGE_ROLES
+autorole list	view	View all autoroles	MANAGE_ROLES
+Best Practices
+<AccordionGroup> <Accordion title="Autoresponder trigger selection"> Choose clear, unique triggers: ```bash .ar add faq Check #faq-channel # Good .ar add the We have that # Bad (too common) ``` </Accordion> <Accordion title="Role hierarchy"> Ensure the bot's role is **higher** than autoroles in your server's role list. The bot cannot assign roles higher than its own position. </Accordion> <Accordion title="Autoresponder response length"> Keep responses concise and helpful: ```bash .ar add support Visit #support or open a ticket! ``` Avoid extremely long responses that spam the chat. </Accordion> <Accordion title="Multiple autoroles"> You can assign multiple roles to new members: ```bash .autorole add @Member .autorole add @Unverified ``` All configured roles will be assigned on join. </Accordion> </AccordionGroup>
+Tips & Tricks
+<Info> **Trigger matching:** Autoresponder uses exact word matching. The trigger "hi" will match "Hi there!" but not "this" or "hiya". </Info> <Warning> **Role position:** If the bot cannot assign a role, check that its role is higher than the autorole in Server Settings → Roles. </Warning> <Tip> **Common use cases:** - Welcome greetings: `.ar add hi Welcome! Check out #rules!` - FAQ shortcuts: `.ar add apply Visit our application form at...` - Support routing: `.ar add help Please open a ticket in #support` </Tip>
+Examples in Action
+Setting up a welcoming server
+# Enable autoresponder
+.ar enable
+# Add friendly greetings
+.ar add hi Hey there! Welcome to our community! 👋
+.ar add hello Hello! Make sure to check out #rules and #info!
+.ar add hey Hey! How can we help you today?
+# Setup autoroles
+.autorole add @New Member
+.autorole bots @Bot
+FAQ automation
+# Common questions
+.ar add apply Visit our application form at https://example.com/apply
+.ar add rules Please read the rules in #rules before participating!
+.ar add support Need help? Open a ticket in #support!
+.ar add invite Here's our invite link: https://discord.gg/yourserver
+Managing responses
+# View all responses
+.ar list
+# Edit an existing one
+.ar edit apply Our applications are now open! Visit...
+# Check details
+.ar info apply
+# Remove outdated response
+.ar remove oldtrigger
+Need Help?
+Join our support server for assistance with automations or to suggest new features!
+
+"
+---

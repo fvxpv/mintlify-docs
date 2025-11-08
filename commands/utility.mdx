@@ -1,0 +1,229 @@
+---
+title: "Utility"
+description: "---
+title: Utility Commands
+description: 'Essential commands for server management and information'
+---
+## Overview
+Utility commands provide essential tools for managing your server, viewing information, and configuring bot settings. These commands help moderators and administrators streamline daily server operations.
+## Server Information
+### serverinfo
+Display detailed information about your server.
+```bash
+.serverinfo
+.si
+Shows:
+
+Server creation date and age
+Owner information
+Member statistics (humans/bots)
+Channel counts (text/voice/categories)
+Boost level and count
+Role and emoji counts
+Verification level
+userinfo
+View detailed information about a server member.
+
+.userinfo @user
+.ui @user
+.whois 123456789
+Shows:
+
+Account creation date
+Server join date
+Roles and permissions
+Boost status
+Current status (online/idle/dnd)
+Prefix Management
+prefix
+Manage custom command prefixes for your server.
+
+.prefix add !
+.prefix remove !
+.prefix list
+Features:
+
+Up to 3 custom prefixes per server
+Server-wide prefix management
+Self prefix (personal prefix for individual users)
+Self Prefix:
+
+.prefix self >
+.prefix self toggle
+Set a personal prefix that only works for you, independent of server prefixes.
+
+Permissions: MANAGE_GUILD (for server prefixes)
+
+Role Management
+role
+Manage roles for members and create/delete roles.
+
+.role @user @RoleName
+.role create "New Role" #FF5733
+.role delete @RoleName
+.role duplicate @Moderator "Senior Moderator"
+Features:
+
+Add/remove roles from members
+Create roles with custom colors
+Delete existing roles
+Duplicate roles with same permissions
+Advanced:
+
+.role has remove @Member @Muted
+Remove a role from all members who have another specific role.
+
+Permissions: MANAGE_ROLES
+
+roles
+Display all roles a user has.
+
+.roles @user
+.userroles
+Shows a paginated list of all roles (excluding @everyone), sorted by position.
+
+AFK System
+afk
+Set yourself as away from keyboard with a custom status.
+
+.afk Going to sleep
+.afk remove
+.afk list
+Features:
+
+Automatic welcome back message when you return
+Shows time spent AFK
+Mentions notify others when you're AFK
+Moderators can clear others' AFK status
+Clear AFK (Moderator):
+
+.afk clear @user
+Permissions: KICK_MEMBERS (for clearing others)
+
+Command Aliases
+alias
+Create shortcuts for existing commands.
+
+.alias add ban b
+.alias add userinfo ui
+.alias remove b
+.alias list
+.alias clear
+Example:
+After setting .alias add ban b, you can use .b @user instead of .ban @user.
+
+Permissions: MANAGE_GUILD
+
+Emoji & Sticker Management
+emoji steal
+Steal emojis from other servers.
+
+.emoji steal :custom_emoji:
+.emoji steal :laugh: custom_laugh
+Add Multiple:
+
+.emoji add :emoji1: :emoji2: :emoji3:
+Adds multiple emojis at once with their original names.
+
+Permissions: MANAGE_EMOJIS
+
+sticker steal
+Steal stickers by replying to a message.
+
+.sticker steal
+.sticker steal custom_name
+Usage: Reply to a message with a sticker and use this command to add it to your server.
+
+Permissions: MANAGE_EMOJIS_AND_STICKERS
+
+Utility Commands
+say
+Make the bot repeat a message.
+
+.say Hello everyone!
+.echo Welcome to the server
+Automatically deletes your command message for a cleaner look.
+
+Permissions: MANAGE_MESSAGES
+
+ping
+Check the bot's latency and response time.
+
+.ping
+Shows websocket ping and database latency.
+
+botinfo
+Display detailed information about the bot.
+
+.botinfo
+.bi
+Shows:
+
+Member statistics across all servers
+CPU and memory usage
+Uptime
+Total commands
+Lines of code
+help
+View all available commands organized by category.
+
+.help
+.commands
+Features:
+
+Interactive dropdown menu
+Commands organized by category
+Quick access to invite and support links
+Additional Features
+Sticky Messages
+Pin messages that automatically repost when new messages are sent.
+
+.sticky set #channel Your message here
+.sticky remove #channel
+.sticky list
+Use case: Keep important announcements always visible at the bottom of a channel.
+
+Permissions: MANAGE_MESSAGES
+
+Birthday System
+Track and celebrate member birthdays.
+
+.birthday set 01/15
+.birthday remove
+.birthday list
+Permissions: MANAGE_GUILD (for setup)
+
+Vanity Roles
+Automatic roles based on custom status or activity.
+
+.vanity add "custom status" @RoleName
+.vanity remove "custom status"
+.vanity list
+Permissions: MANAGE_ROLES
+
+Tips & Best Practices
+<AccordionGroup> <Accordion title="Organize with prefixes"> Set multiple prefixes for different use cases: ```bash .prefix add ! # Main prefix .prefix add ? # Help prefix .prefix add > # Admin prefix ``` </Accordion> <Accordion title="Use aliases for efficiency"> Create aliases for frequently used commands: ```bash .alias add serverinfo si .alias add userinfo ui .alias add botinfo bi ``` </Accordion> <Accordion title="Self prefixes for personal use"> Set a personal prefix that won't conflict with others: ```bash .prefix self >> ``` </Accordion> <Accordion title="AFK system etiquette"> Keep AFK messages brief and informative: ```bash .afk Studying, back in 2 hours ``` </Accordion> </AccordionGroup>
+Permissions Quick Reference
+Command	Required Permission
+prefix add/remove	MANAGE_GUILD
+role	MANAGE_ROLES
+alias	MANAGE_GUILD
+emoji steal	MANAGE_EMOJIS
+sticker steal	MANAGE_EMOJIS_AND_STICKERS
+say	MANAGE_MESSAGES
+afk clear	KICK_MEMBERS
+sticky	MANAGE_MESSAGES
+Need Help?
+Join our support server for assistance with utility commands.
+
+This documentation covers all the utility commands from your codebase including:
+- **Server/User info** commands
+- **Prefix** management (server and self prefixes)
+- **Role** management (add/remove/create/duplicate)
+- **AFK** system
+- **Alias** system for command shortcuts
+- **Emoji/Sticker** stealing
+- **Say**, **Ping**, **Botinfo**, **Help**
+- **Sticky messages**, **Birthday**, **Vanity roles**
+The content is organized logically with clear examples, permissions, and best practices!"
+---
