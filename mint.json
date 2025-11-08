@@ -1,0 +1,110 @@
+{
+  "name": "Covet Bot",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#5865F2",
+    "light": "#7289DA",
+    "dark": "#5865F2"
+  },
+  "topbarLinks": [
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/5ry3HysZ7E"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Add to Server",
+    "url": "https://discord.com/api/oauth2/authorize?client_id=YOUR_BOT_ID&permissions=8&scope=bot"
+  },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "getting-started",
+        "setup"
+      ]
+    },
+    {
+      "group": "Moderation",
+      "pages": [
+        "moderation/overview",
+        "moderation/ban",
+        "moderation/kick",
+        "moderation/timeout",
+        "moderation/warn",
+        "moderation/purge",
+        "moderation/lock",
+        "moderation/slowmode",
+        "moderation/modlog"
+      ]
+    },
+    {
+      "group": "Safety & Security",
+      "pages": [
+        "safety/overview",
+        "safety/filter",
+        "safety/restrictions"
+      ]
+    },
+    {
+      "group": "Automations",
+      "pages": [
+        "automations/overview",
+        "automations/autoresponder",
+        "automations/autorole",
+        "automations/welcome"
+      ]
+    },
+    {
+      "group": "Utility",
+      "pages": [
+        "utility/overview",
+        "utility/prefix",
+        "utility/alias",
+        "utility/invoke",
+        "utility/afk",
+        "utility/birthday",
+        "utility/serverinfo",
+        "utility/userinfo"
+      ]
+    },
+    {
+      "group": "Fun Commands",
+      "pages": [
+        "fun/overview",
+        "fun/games",
+        "fun/avatar",
+        "fun/calculator"
+      ]
+    },
+    {
+      "group": "Features",
+      "pages": [
+        "features/starboard",
+        "features/tickets",
+        "features/giveaway"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "discord": "https://discord.gg/your-server",
+    "github": "https://github.com/your-repo"
+  },
+  "anchors": [
+    {
+      "name": "Commands",
+      "icon": "book",
+      "url": "commands"
+    },
+    {
+      "name": "Support",
+      "icon": "discord",
+      "url": "https://discord.gg/your-server"
+    }
+  ]
+}
